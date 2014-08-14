@@ -171,6 +171,8 @@ module.exports.files = function () {
         } else {
             // Found sections
             grunt.verbose.ok('Comment found');
+            console.log(file);
+            page.category = Sassdown.getCategory(file);
             page.sections = Sassdown.getSections(file);
         }
         // No matching title
@@ -216,6 +218,10 @@ module.exports.getSections = function (file) {
         return output;
     });
 };
+
+module.exports.getCategory = function (file) {
+    
+}
 
 module.exports.formatting = function (content, styles) {
     // Create output object with unique id
